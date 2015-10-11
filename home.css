@@ -1,0 +1,85 @@
+
+/*START Header CSS*/
+#headerWraper{
+	width: 350px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#searchRestaurantBox{
+	display: inline-block;;
+	width: 270px;
+	height: 30px;
+	padding-left: 20px;
+}
+#searchRestaurantsButton{
+	width: 55px;
+    height: 35px;
+    float: right;
+}
+#mainHeader{
+    text-align: center;
+    margin-top: 10px;
+	margin-bottom: 0px;
+}
+#subHeader{
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+#caloriesIndicator{
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 150px;
+	text-align: center;
+	font-size: 18px;
+}
+#nutritionIndicatorsList{
+	list-style: none;
+
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	margin-top: 5px;
+	width: 300px;
+	
+	padding-left: 0px;
+}
+#nutritionIndicatorsList li{
+	display: inline-block;
+	width: 90px;
+	text-align: center;
+}
+/*END Header CSS*/
+
+/*START SelectionWrapper CSS*/
+#selectionWrapper{
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#selectionWrapper h4{
+	text-align: center;
+	margin-bottom: 10px;
+	margin-top: 30px;
+}
+#selectionWrapper ul{
+	list-style-type: none;
+	margin-top: 10px;
+}
+/*END SelectionWrapper CSS*/
+
+/*START moreFoodsWrapper*/
+#moreFoodsWrapper{
+	width: 350px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#moreFoodBtn{
+	width: 350px;
+	height: 40px;
+	
+}
+
+
