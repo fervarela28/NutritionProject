@@ -2,11 +2,11 @@
 <html>
 <head>
 <title>Meal Planner</title>
-<link rel="stylesheet" type="text/css" href="home.css">
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='home.css')}}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="home.js"></script>
+<script src="{{url_for('static', filename='home.js')}}"></script>
 </head>
-<body >
+<body onload="selectDefaultItem()">
 
     <!--Title and nutrition numbers-->
     <div id="headerWraper">
@@ -29,25 +29,26 @@
     <div id="selectionWrapper">
         <h4 id="mealTypesHeader">Meal Types</h4>
         <ul id="mealTypesList">
-            <li><input type="radio" name="mealType" value="taco" onclick="getMealType(this)">Taco</li>
-            <li id="defaultItem"><input type="radio" name="mealType" value="regularBurrito" onclick="getMealType(this)">Burrito (regular)</li>
-            <li><input type="radio" name="mealType" value="superBurrito" onclick="getMealType(this)">Burrito (super)</li>
-            <li><input type="radio" name="mealType" value="regularQuesadilla" onclick="getMealType(this)">Quesadilla (regular)</li>
-            <li><input type="radio" name="mealType" value="superQuesadilla" onclick="getMealType(this)">Quesadilla (super)</li>
-            <li><input type="radio" name="mealType" value="mexicanPlate" onclick="getMealType(this)">Mexican Plate</li>
+            <li><input type="radio" name="mealType" value="taco" onclick="getMealType()">Taco</li>
+            <li id="defaultItem"><input type="radio" name="mealType" value="regularBurrito" onclick="getMealType()">Burrito (regular)</li>
+            <li><input type="radio" name="mealType" value="superBurrito" onclick="getMealType()">Burrito (super)</li>
+            <li><input type="radio" name="mealType" value="regularQuesadilla" onclick="getMealType()">Quesadilla (regular)</li>
+            <li><input type="radio" name="mealType" value="superQuesadilla" onclick="getMealType()">Quesadilla (super)</li>
+            <li><input type="radio" name="mealType" value="mexicanPlate" onclick="getMealType()">Mexican Plate</li>
         </ul>
 
         <!-- this will only pop up for burritos and quesidellas -->
         <div id="cheeseAndTortillaWrapper">
             <h4 id="tortCheeseHeader">Tortilla and Cheese</h4>
             <ul id="cheeseList">
-                <li id="withCheese"><input type="checkbox" name="cheese" value="cheese" onclick="updateIngredientsList(this)">Cheese</li>
-        
+                <li id="withCheese"><input type="radio" name="cheese"  onclick="getCheeseValue(true)">Cheese</li>
+                <li id="noCheese"><input type="radio" name="cheese"  onclick="getCheeseValue(false)">No Cheese</li>
             </ul>
             <ul id="tortillaList">
-                <li id="cornTortilla" ><input  type="checkbox" name="tortilla" value="cornTortilla" onclick="updateIngredientsList(this)">Corn Tortilla (x2)</li>
-                <li class="normalTortilla"><input type="checkbox" name="tortilla" value="flourTortilla" onclick="updateIngredientsList(this)">Flour Tortilla</li>
-                <li class="normalTortilla"><input type="checkbox" name="tortilla" value="wheatTortilla" onclick="updateIngredientsList(this)">Whole Wheat Tortilla</li>
+                <li id="cornTortilla" ><input  type="radio" name="tortilla" value="cornTortilla" onclick="getTortillaValue(this)">Corn Tortilla (x2)</li>
+                <li id="flourTortilla"><input type="radio" name="tortilla" value="flourTortilla" onclick="getTortillaValue(this)">Flour Tortilla</li>
+                <li id="wheatTortilla"><input type="radio" name="tortilla" value="wheatTortilla" onclick="getTortillaValue(this)">Whole Wheat Tortilla</li>
+                <li id="noTortilla" style="display:none;"><input type="radio" name="tortilla" value="" onclick="getTortillaValue(this)">No Tortilla</li>
             </ul>
         </div>
         <!-- end -->
@@ -73,7 +74,7 @@
         <h4 id="addOnTypeHeader">Add-Ons</h4>
         <ul id="addOnTypeList">
             <li><input type="checkbox" class="addOns" value="lettuce" onclick="updateIngredientsList(this)">Lettuce</li>
-            <li><input type="checkbox" class="addOns" value="picoDeGu" onclick="updateIngredientsList(this)">picoDeGallo</li>
+            <li><input type="checkbox" class="addOns" value="picoDeGallo" onclick="updateIngredientsList(this)">picoDeGallo</li>
             <li><input type="checkbox" class="addOns" value="guacomole" onclick="updateIngredientsList(this)">Guacomole</li>
             <li><input type="checkbox" class="addOns" value="sourCream" onclick="updateIngredientsList(this)">Sour Cream</li>
         </ul>  
